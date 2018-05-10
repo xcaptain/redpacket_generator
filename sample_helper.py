@@ -1,5 +1,9 @@
 def normalize(samples, amount):
-    l = list(map(lambda x: int(x), samples)) # 先取整数
+    def toInt(x):
+        if x >= 1:
+            return int(x)
+        return 1
+    l = list(map(toInt, samples)) # 先取整数
     while True:
         if sum(l) - amount > 0:
             for i in range(0, len(l)):
